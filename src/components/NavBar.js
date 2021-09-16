@@ -1,0 +1,55 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+function NavBar() {
+  const username = "Sebastián";
+  return (
+    <nav>
+      <ul className="navbar">
+        <li className="navbarItem">
+          <NavLink exact to="/" activeClassName="active" className="item">
+            Home
+          </NavLink>
+          {/* NavLink allows to follow the path without recharge the page, what is one of features of a single page aplication, in addition to allow change the color of a link, when it is selected with prop activeClassName. We can use exact to avoid the problem of have a root route selected with other at the same time.*/}
+        </li>
+        <li className="navbarItem">
+          <NavLink exact to="/about" activeClassName="active" className="item">
+            About
+          </NavLink>
+        </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to="/contact"
+            activeClassName="active"
+            className="item"
+          >
+            Contact
+          </NavLink>
+        </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to={`/profile/${username}`}
+            activeClassName="active"
+            className="item"
+          >
+            profile
+          </NavLink>
+        </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to={`/categories`}
+            activeClassName="active"
+            className="item"
+          >
+            Categories
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+export default NavBar;
