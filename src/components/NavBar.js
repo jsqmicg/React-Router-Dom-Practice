@@ -47,6 +47,46 @@ function NavBar() {
             Categories
           </NavLink>
         </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to={`/login`}
+            activeClassName="active"
+            className="item"
+          >
+            Login
+          </NavLink>
+        </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to={`/register`}
+            activeClassName="active"
+            className="item"
+          >
+            Register
+          </NavLink>
+        </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to={`/dashboard`}
+            activeClassName="active"
+            className="item"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+        <li className="navbarItem">
+          <NavLink
+            exact
+            to={`/payments`}
+            activeClassName="active"
+            className="item"
+          >
+            Payments
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
