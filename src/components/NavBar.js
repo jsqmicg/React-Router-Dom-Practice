@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../auth/useAuth";
 
 function NavBar() {
   const username = "Sebastián";
+  const auth = useAuth();
+  const handleLogout = () => auth.logout();
+  const handleLogin = () => auth.login();
   return (
     <nav>
       <ul className="navbar">
@@ -86,6 +90,13 @@ function NavBar() {
           >
             Payments
           </NavLink>
+        </li>
+        <li>
+          {auth.user ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            <button onClick={handleLogin}>Sign In</button>
+          )}
         </li>
       </ul>
     </nav>

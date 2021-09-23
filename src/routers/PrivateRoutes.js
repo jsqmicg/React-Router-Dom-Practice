@@ -1,13 +1,14 @@
 import React from "react";
 import { Route, Redirect } from "react-router";
+import useAuth from "../auth/useAuth";
 import DashboardPage from "../pages/Dashboards";
 
-//const user = null;
-const user = { id: 1, username: "basstian94" };
-
 function PrivateRoute({ component: Component, ...rest }) {
+  const auth = useAuth();
   return (
-    <Route {...rest}>{user ? <Component /> : <Redirect to={"/"} />}</Route>
+    <Route {...rest}>
+      {auth.user ? <Component /> : <Redirect to={"/login"} />}
+    </Route>
   );
 }
 
