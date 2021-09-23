@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import useAuth from "../auth/useAuth";
 import { useHistory } from "react-router";
 
@@ -19,6 +20,13 @@ function LoginPages() {
       ) : (
         <button onClick={handleLogin}>Sign In</button>
       )}
+=======
+
+function LoginPages() {
+  return (
+    <div>
+      <h1>Login Page</h1>
+>>>>>>> main
     </div>
   );
 }
