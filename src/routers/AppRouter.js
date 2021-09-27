@@ -17,6 +17,7 @@ import Payments from "../pages/Payments";
 import ProfilePage from "../pages/ProfilePage";
 import RegisterPage from "../pages/RegisterPage";
 import PrivateRoute from "./PrivateRoutes";
+import PublicRoute from "./PublicRoute";
 
 export default function AppRouter() {
   return (
@@ -31,7 +32,7 @@ export default function AppRouter() {
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/profile/:username" component={ProfilePage} />
         <Route exact path="/categories" component={CategoriesPage} />
-        <Route exact path="/login" component={LoginPages} />
+        <PublicRoute exact path="/login" component={LoginPages} />
         <Route exact path="/signin">
           <Redirect to="login" />
         </Route>

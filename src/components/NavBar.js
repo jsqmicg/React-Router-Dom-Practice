@@ -58,16 +58,20 @@ function NavBar() {
             Categories
           </NavLink>
         </li>
-        <li className="navbarItem">
-          <NavLink
-            exact
-            to={`/login`}
-            activeClassName="active"
-            className="item"
-          >
-            Login
-          </NavLink>
-        </li>
+        {!auth.user ? (
+          <li className="navbarItem">
+            <NavLink
+              exact
+              to={`/login`}
+              activeClassName="active"
+              className="item"
+            >
+              Login
+            </NavLink>
+          </li>
+        ) : (
+          <div className="item"></div>
+        )}
         <li className="navbarItem">
           <NavLink
             exact
