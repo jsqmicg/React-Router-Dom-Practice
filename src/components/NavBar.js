@@ -14,7 +14,7 @@ function NavBar() {
           <NavLink exact to="/" activeClassName="active" className="item">
             Home
           </NavLink>
-          {/* NavLink allows to follow the path without recharge the page, what is one of features of a single page aplication, in addition to allow change the color of a link, when it is selected with prop activeClassName. We can use exact to avoid the problem of have a root route selected with other at the same time.*/}
+          {/* NavLink allows to follow the path without recharge the page, what is one of features of a single page aplication, in addition it allows to change the color of a link, when it is selected with prop activeClassName. We can use exact to avoid the problem of have a root route selected with other at the same time.*/}
         </li>
         <li className="navbarItem">
           <NavLink exact to="/about" activeClassName="active" className="item">
