@@ -1,12 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../auth/useAuth";
 
 function NavBar() {
   const username = "Sebastián";
+  const history = useHistory();
+  const location = useLocation();
+  const previousObjectURL = location.state?.from;
   const auth = useAuth();
   const handleLogout = () => auth.logout();
-  const handleLogin = () => auth.login();
+  const handleLogin = () => {
+    auth.login();
+    history.push(previousObjectURL || "/dashboard");
+    console.log(location);
+  };
   return (
     <nav>
       <ul className="navbar">
